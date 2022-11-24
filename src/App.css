@@ -36,3 +36,95 @@
     transform: rotate(360deg);
   }
 }
+
+.nav{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  position: sticky;
+  top:0;
+  height: 50px;
+  background-color: rgba(100, 102, 108, 0.5);
+  /* z-index: 999; */
+  /* gap:30rem; */
+}
+
+.createPostPage{
+  margin-top:20px;
+  padding-bottom:20px;
+  margin-left:5rem;
+  margin-right:5rem;
+  border:1px solid;
+  color:white;
+  display: grid;
+ justify-content: center;
+/* width: 30%;
+height: 30%;
+padding: 10px;
+border-radius: 20px;
+color: aliceblue;
+align-items: center;
+text-align: center;
+margin: auto; */
+}
+.cpContainer{
+
+}
+
+.writeSubmit{
+  appearance: none;
+  background-color: #000000;
+  border: 2px solid #1A1A1A;
+  border-radius: 15px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: normal;
+  margin: 0;
+  min-height: 60px;
+  min-width: 0;
+  outline: none;
+  padding: 16px 24px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 100%;
+  will-change: transform;
+}
+.login-with-google-btn img{
+  width: 25px;
+  padding: 2px;
+  padding-right: 10px;
+}
+.writeInput{
+  font-size: 30px;
+  border:none;
+  padding :20px;
+  width:70vh;
+  color: rgb(51, 15, 15);
+}
+.inputGp{
+  font-size: 30px;
+  border:none;
+  padding :20px;
+  width:70vh;
+  color: white;
+}
+
+.login-with-google-btn{
+align-items: center;
+text-align: center;
+margin: 10px;
+justify-content: center;
+display: flex;
+font-size: 20px;
+}
+.loginPage{
+
+}
