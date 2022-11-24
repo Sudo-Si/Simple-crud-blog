@@ -10,7 +10,7 @@ import {auth} from "./firbase-config"
 // import StyledNavbar from "./StyledNavbar"
 
 function App() {
-  const [isAuth, setIsAuth] = useState(false);
+  const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth"));
 
 
   const signUseOut =()=>{
@@ -33,7 +33,7 @@ signOut(auth).then (()=>{
         }
       </nav>
        <Routes>
-      <Route path='/' element={<Home />}/>
+      <Route path='/' element={<Home isAuth={isAuth} />}/>
       <Route path='/create-post' element={<CreatePosts isAuth={isAuth} />}/>
       <Route path='/login' element={<Login setIsAuth={setIsAuth} />}/>
     </Routes>

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { collection, deleteDoc, doc, getDocs } from 'firebase/firestore';
 import { db, auth } from '../firbase-config';
 
-export default function Home() {
+export default function Home({isAuth}) {
 const [postList, setPostList] = useState([]);
   const postsCollectionRef = collection(db, "posts");
   const dltPost = async(id)=>{
@@ -30,11 +30,12 @@ const [postList, setPostList] = useState([]);
       <h1>The Yarn...</h1>
       <h1>{post.title}</h1>
       </div>
+
       <div className='dltPost'> 
-      <button onClick={()=>{dltPost(post.id);}}>
-         &#128465;</button>
-         
-      </div>
+     {isAuth &&  post.author.id === auth.currentUser.uid &&<button onClick={()=>{dltPost(post.id);}}>
+         &#128465;</button>}
+         </div>
+
     </div>
     
    
