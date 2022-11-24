@@ -36,7 +36,9 @@
     transform: rotate(360deg);
   }
 }
-
+ .post{
+  color: #000000;
+ }
 .nav{
   display: flex;
   justify-content: space-evenly;

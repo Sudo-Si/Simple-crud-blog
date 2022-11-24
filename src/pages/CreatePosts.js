@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import {addDoc, collection} from "firebase/firestore"
 import { auth, db } from '../firbase-config';
 
 import {useNavigate} from "react-router-dom"
 
-export default function CreatePosts() {
+export default function CreatePosts({isAuth}) {
   
 let navigate = useNavigate();
   const [title, setTitle] = useState("");
@@ -12,13 +12,18 @@ let navigate = useNavigate();
   const postsCollectionRef = collection(db, "posts")
 
 
-    const handleSubmit = ()=>{
-       addDoc(postsCollectionRef, 
-        {title,postText, author:{name:auth.currentUser.displayName,id:auth.currentUser.uid},
+    const handleSubmit = async ()=>{
+       await addDoc(postsCollectionRef, 
+        {title,postText,a2:auth.currentUser.displayName, author:{name: auth.currentUser.displayName, id:auth.currentUser.uid},
        } );
        navigate("/")
     }
   
+    useEffect(() => {
+     if(!isAuth){
+      navigate("/login"); 
+     }
+    }, []);
   return (
     <div className='createPostPage'> 
     <form className="writeForm" >

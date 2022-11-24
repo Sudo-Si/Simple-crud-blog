@@ -25,12 +25,16 @@ signOut(auth).then (()=>{
   <Router>
   <nav className='nav'>
         <Link to="/">Home </Link>
-        <Link to="/create-post">Spin a Yarn </Link>
-      {!isAuth ? <Link to="/login">Login </Link>:<button onClick={signUseOut}>Logout</button>}
+        
+      {!isAuth ? <Link to="/login">Login </Link>:<>   <Link to="/create-post">Spin a Yarn </Link>
+        <button onClick={signUseOut}>Logout</button></>
+   
+        
+        }
       </nav>
        <Routes>
       <Route path='/' element={<Home />}/>
-      <Route path='/create-post' element={<CreatePosts />}/>
+      <Route path='/create-post' element={<CreatePosts isAuth={isAuth} />}/>
       <Route path='/login' element={<Login setIsAuth={setIsAuth} />}/>
     </Routes>
     </Router>
