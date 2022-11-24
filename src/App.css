@@ -37,7 +37,20 @@
   }
 }
  .post{
-  color: #000000;
+  width: 600px;
+  height: auto;
+  max-height: 600px;
+  background-color: rgb(250, 250, 250);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 15px;
+ }
+ .dltPost{
+  flex: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
  }
 .nav{
   display: flex;
@@ -129,4 +142,32 @@ font-size: 20px;
 }
 .loginPage{
 
+}
+
+
+
+.post .postHeader {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.postHeader .title {
+  flex: 50%;
+}
+.postHeader .dltPost {
+  flex: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+h1{
+  color: black;
+}
+.dltPost button {
+  border: none;
+
+  background: none;
+  font-size: 30px;
+  cursor: pointer;
 }
