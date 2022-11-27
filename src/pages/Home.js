@@ -13,8 +13,7 @@ const [postList, setPostList] = useState([]);
     const getPosts = async ()=>{
       const data = await getDocs(postsCollectionRef);
    setPostList(data.docs.map((doc)=>({...doc.data(), id:doc.id})));
-      // console.log(data.docs.map((doc)=>({...doc.data(), id:doc.id
-      // })))
+
     };
 
     getPosts();
@@ -40,8 +39,7 @@ const [postList, setPostList] = useState([]);
     
    
       <div className='postTextContainer'>{post.postText}
-          <h3>Spun By
-        {post.author.name} </h3>
+          <h3>Spun By {post.author.name} </h3>
       </div>
     </div>
    )
